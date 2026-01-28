@@ -1,98 +1,74 @@
 # Brain Tumor Identification and Classification Using Deep Learning
 
-## 📌 Project Overview
-Brain tumors are abnormal growths of cells in the brain and can be life-threatening if not detected early. Manual analysis of MRI scans is time-consuming and highly dependent on expert radiologists. This project proposes an automated system for brain tumor identification and classification using deep learning techniques.
+## Project Overview
+Brain tumors are abnormal growths of cells in the brain and can be life-threatening if not detected early. Manual analysis of MRI scans is time-consuming and highly dependent on expert radiologists. This project presents an automated system for brain tumor identification and classification using deep learning techniques.
 
-The system analyzes MRI images and classifies them into **tumor** and **normal** categories using a Convolutional Neural Network (CNN). The proposed approach improves accuracy, reduces human effort, and supports early diagnosis.
+The system analyzes MRI images and classifies them into tumor and normal categories using a Convolutional Neural Network (CNN). The proposed approach improves accuracy, reduces human effort, and supports early diagnosis.
 
----
+## Objectives
+- Automatically detect brain tumors from MRI images
+- Classify MRI images into tumor and normal classes
+- Evaluate model performance using standard metrics
+- Reduce manual effort in medical image analysis
 
-## 🎯 Objectives
-- To automatically detect brain tumors from MRI images  
-- To classify MRI images into tumor and normal classes  
-- To evaluate model performance using standard metrics  
-- To reduce manual effort in medical image analysis  
+## Dataset
+Source: Kaggle  
+Dataset Name: Brain MRI Images for Brain Tumor Detection
 
----
+Classes:
+- yes: Tumor images
+- no: Normal images
 
-## 🧠 Dataset
-- **Source:** Kaggle  
-- **Dataset Name:** Brain MRI Images for Brain Tumor Detection  
-- **Classes:**
-  - `yes` – Tumor images  
-  - `no` – Normal images  
+Dataset structure:
+brain_tumor_dataset/
+├── yes/
+└── no/
 
-### Dataset Structure
-- brain_tumor_dataset/
-- ├── yes/
-- └── no/
+## Methodology
+1. Image preprocessing including resizing, grayscale conversion, normalization, and noise reduction.
+2. Automatic feature extraction using convolutional layers.
+3. Classification using a CNN with convolution, pooling, and fully connected layers.
+4. Performance evaluation using standard classification metrics.
 
----
+## Evaluation Metrics
+- Accuracy: Measures the overall correctness of the model.
+- Precision: Measures how many predicted tumor cases are correct.
+- Recall: Measures the ability to detect actual tumor cases.
+- F1-score: Balances precision and recall.
 
-## ⚙️ Methodology
-1. **Image Preprocessing**
-   - Resizing images
-   - Grayscale conversion
-   - Normalization
-   - Noise reduction
+## Technologies Used
+- Python
+- TensorFlow and Keras
+- NumPy
+- OpenCV
+- Matplotlib
+- Scikit-learn
+- Pandas
 
-2. **Feature Learning**
-   - Automatic feature extraction using CNN layers
+## Project Structure
+Brain_Tumor_Identification/
+├── brain_tumor_dataset/
+│ ├── yes/
+│ └── no/
+├── brain_tumor_detection.ipynb
+├── requirements.txt
+└── README.md
 
-3. **Classification**
-   - CNN model with convolution, pooling, and dense layers
-   - Softmax activation for final classification
+## How to Run the Project
+1. Clone or download the project repository.
+2. Upload the dataset to the project directory.
+3. Install dependencies using the command:
+   pip install -r requirements.txt
+4. Run the Jupyter notebook or Python script.
+5. Observe the training process and evaluation results.
 
-4. **Evaluation**
-   - Accuracy
-   - Precision
-   - Recall
-   - F1-score
+## Results
+The proposed system achieves high accuracy in detecting brain tumors from MRI images and demonstrates reliable classification performance.
 
----
+## Future Scope
+- Extension to multi-class tumor classification.
+- Use of 3D MRI images for improved analysis.
+- Integration into real-time clinical systems.
 
-## 🧪 Evaluation Metrics
-- **Accuracy:** Overall correctness of classification  
-- **Precision:** Correctly predicted tumor cases  
-- **Recall:** Ability to detect actual tumor cases  
-- **F1-score:** Balance between precision and recall  
-
-The model achieves high accuracy and reliable performance on MRI image classification.
-
----
-
-## 🛠️ Technologies Used
-- **Programming Language:** Python  
-- **Frameworks & Libraries:**
-  - TensorFlow / Keras
-  - NumPy
-  - OpenCV
-  - Matplotlib
-  - Scikit-learn
-  - Pandas
-- **Platform:** Google Colab / Local Machine  
-
----
-
-## 📁 Project Structure
-- Brain_Tumor_Identification/
-- │
-- ├── brain_tumor_dataset/
-- │ ├── yes/
-- │ └── no/
-- │
-- ├── brain_tumor_detection.ipynb
-- ├── requirements.txt
-- └── README.md
-
----
-
-## 🚀 How to Run the Project
-1. Clone or download the repository  
-2. Upload the dataset to the project directory  
-3. Install dependencies:
-   ```bash
-  - pip install -r requirements.txt
-  - Run the Jupyter notebook or Python script
-
-- Observe model training, evaluation metrics, and results
+## Academic Note
+This project is developed for academic and research purposes as part of an undergraduate engineering program.
