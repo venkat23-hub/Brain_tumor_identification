@@ -23,3 +23,76 @@ The system analyzes MRI images and classifies them into **tumor** and **normal**
   - `no` – Normal images  
 
 ### Dataset Structure
+- brain_tumor_dataset/
+- ├── yes/
+- └── no/
+
+---
+
+## ⚙️ Methodology
+1. **Image Preprocessing**
+   - Resizing images
+   - Grayscale conversion
+   - Normalization
+   - Noise reduction
+
+2. **Feature Learning**
+   - Automatic feature extraction using CNN layers
+
+3. **Classification**
+   - CNN model with convolution, pooling, and dense layers
+   - Softmax activation for final classification
+
+4. **Evaluation**
+   - Accuracy
+   - Precision
+   - Recall
+   - F1-score
+
+---
+
+## 🧪 Evaluation Metrics
+- **Accuracy:** Overall correctness of classification  
+- **Precision:** Correctly predicted tumor cases  
+- **Recall:** Ability to detect actual tumor cases  
+- **F1-score:** Balance between precision and recall  
+
+The model achieves high accuracy and reliable performance on MRI image classification.
+
+---
+
+## 🛠️ Technologies Used
+- **Programming Language:** Python  
+- **Frameworks & Libraries:**
+  - TensorFlow / Keras
+  - NumPy
+  - OpenCV
+  - Matplotlib
+  - Scikit-learn
+  - Pandas
+- **Platform:** Google Colab / Local Machine  
+
+---
+
+## 📁 Project Structure
+- Brain_Tumor_Identification/
+- │
+- ├── brain_tumor_dataset/
+- │ ├── yes/
+- │ └── no/
+- │
+- ├── brain_tumor_detection.ipynb
+- ├── requirements.txt
+- └── README.md
+
+---
+
+## 🚀 How to Run the Project
+1. Clone or download the repository  
+2. Upload the dataset to the project directory  
+3. Install dependencies:
+   ```bash
+  - pip install -r requirements.txt
+  - Run the Jupyter notebook or Python script
+
+- Observe model training, evaluation metrics, and results
