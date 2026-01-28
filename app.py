@@ -47,8 +47,8 @@ def preprocess_image(image):
 # Main title
 st.markdown("""
     <div class="header-container">
-        <h1 class="main-title">🧠 Brain Tumor Detection</h1>
-        <p class="subtitle">Upload an MRI image to detect brain tumors</p>
+        <h1 class="main-title">Brain Tumor Detection</h1>
+        <p class="subtitle">Advanced AI-powered MRI analysis for early detection</p>
     </div>
 """, unsafe_allow_html=True)
 
@@ -57,7 +57,7 @@ col1, col2 = st.columns([1, 1], gap="large")
 
 with col1:
     st.markdown("<div class='upload-section'>", unsafe_allow_html=True)
-    st.markdown("<h3 class='section-title'>📤 Upload MRI Image</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section-title'>Upload MRI Image</h3>", unsafe_allow_html=True)
     
     uploaded_file = st.file_uploader(
         "Choose an MRI image",
@@ -75,7 +75,7 @@ if uploaded_file is not None:
     
     with col2:
         st.markdown("<div class='result-section'>", unsafe_allow_html=True)
-        st.markdown("<h3 class='section-title'>🔍 Analysis Results</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 class='section-title'>Analysis Results</h3>", unsafe_allow_html=True)
         
         # Preprocess image
         processed = preprocess_image(image)
@@ -91,22 +91,20 @@ if uploaded_file is not None:
         if result == 1:
             st.markdown(
                 f"""<div class='result-card tumor-detected'>
-                    <div class='result-icon'>⚠️</div>
                     <div class='result-title'>Tumor Detected</div>
-                    <div class='result-message'>Abnormality Found</div>
-                    <div class='confidence-box'>Confidence: <span class='confidence-value'>{confidence*100:.2f}%</span></div>
-                    <div class='warning-text'>Please consult a medical professional for further evaluation.</div>
+                    <div class='result-message'>Abnormality Found in MRI Scan</div>
+                    <div class='confidence-box'>Confidence Level: <span class='confidence-value'>{confidence*100:.2f}%</span></div>
+                    <div class='warning-text'>⚠️ This result indicates potential abnormalities. Please consult a qualified medical professional for proper diagnosis and treatment.</div>
                 </div>""",
                 unsafe_allow_html=True
             )
         else:
             st.markdown(
                 f"""<div class='result-card no-tumor'>
-                    <div class='result-icon'>✅</div>
-                    <div class='result-title'>You are Safe!!</div>
-                    <div class='result-message'>No Tumor Detected</div>
-                    <div class='confidence-box'>Confidence: <span class='confidence-value'>{confidence*100:.2f}%</span></div>
-                    <div class='success-text'>The scan appears to be normal. Continue with regular check-ups.</div>
+                    <div class='result-title'>No Tumor Detected</div>
+                    <div class='result-message'>MRI Scan Appears Normal</div>
+                    <div class='confidence-box'>Confidence Level: <span class='confidence-value'>{confidence*100:.2f}%</span></div>
+                    <div class='success-text'>✅ The analysis shows no signs of tumors. Continue with regular health check-ups and maintain a healthy lifestyle.</div>
                 </div>""",
                 unsafe_allow_html=True
             )
@@ -115,14 +113,14 @@ else:
     with col2:
         st.markdown("""
             <div class='info-section'>
-                <h3 class='info-title'>ℹ️ How to Use</h3>
+                <h3 class='info-title'>How to Use</h3>
                 <ul class='info-list'>
                     <li>Click the upload button to select an MRI image</li>
                     <li>Supported formats: JPG, PNG, JPEG</li>
                     <li>The image will be processed automatically</li>
                     <li>Results will show if a tumor is detected</li>
                 </ul>
-                <h3 class='info-title'>⚕️ Important Notes</h3>
+                <h3 class='info-title'>Important Notes</h3>
                 <ul class='info-list'>
                     <li>This tool is for educational purposes</li>
                     <li>Always consult a medical professional</li>
