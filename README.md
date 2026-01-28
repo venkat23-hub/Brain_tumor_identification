@@ -65,6 +65,12 @@ Brain_Tumor_Identification/
 ## Results
 The proposed system achieves high accuracy in detecting brain tumors from MRI images and demonstrates reliable classification performance.
 
+## Deployment
+The trained brain tumor classification model has been deployed as a web application using Streamlit. The web app allows users to upload MRI images, automatically preprocess them, and obtain real-time predictions indicating whether a brain tumor is present or not.
+
+Deployment Link:  
+https://braintumoridentification.streamlit.app/
+
 ## Future Scope
 - Extension to multi-class tumor classification.
 - Use of 3D MRI images for improved analysis.
