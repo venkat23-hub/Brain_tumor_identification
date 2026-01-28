@@ -20,9 +20,9 @@ Classes:
 - no: Normal images
 
 Dataset structure:
-brain_tumor_dataset/
-├── yes/
-└── no/
+- brain_tumor_dataset/
+- ├── yes/
+- └── no/
 
 ## Methodology
 1. Image preprocessing including resizing, grayscale conversion, normalization, and noise reduction.
@@ -47,12 +47,12 @@ brain_tumor_dataset/
 
 ## Project Structure
 Brain_Tumor_Identification/
-├── brain_tumor_dataset/
-│ ├── yes/
-│ └── no/
-├── brain_tumor_detection.ipynb
-├── requirements.txt
-└── README.md
+- ├── brain_tumor_dataset/
+- │ ├── yes/
+- │ └── no/
+- ├── brain_tumor_detection.ipynb
+- ├── requirements.txt
+- └── README.md
 
 ## How to Run the Project
 1. Clone or download the project repository.
