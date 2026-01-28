@@ -7,80 +7,33 @@
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
     min-height: 100vh;
-    color: #2c3e50;
+    color: #1e293b;
 }
 
 /* Header Styles */
-.header-container {
-    text-align: center;
-    padding: 40px 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.header-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-}
-
 .main-title {
     font-size: 3em;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     margin-bottom: 15px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 2;
+    text-align: center;
 }
 
 .subtitle {
     font-size: 1.2em;
-    color: rgba(255, 255, 255, 0.95);
+    color: #334155;
     font-weight: 400;
-    position: relative;
-    z-index: 2;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Section Styles */
-.upload-section,
-.result-section,
-.info-section {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.upload-section:hover,
-.result-section:hover,
-.info-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
-}
+/* Section Styles - Container divs removed for cleaner layout */
 
 .section-title {
-    color: #2c3e50;
+    color: #1e293b;
     font-size: 1.6em;
     margin-bottom: 25px;
     font-weight: 700;
@@ -93,13 +46,13 @@ body {
     content: '';
     width: 4px;
     height: 24px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #dc2626, #2563eb);
     border-radius: 2px;
     margin-right: 15px;
 }
 
 .image-title {
-    color: #34495e;
+    color: #374151;
     font-size: 1.3em;
     margin-bottom: 20px;
     font-weight: 600;
@@ -129,8 +82,8 @@ body {
 }
 
 .tumor-detected {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-    border-left: 6px solid #e74c3c;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    border-left: 6px solid #ef4444;
     color: white;
 }
 
@@ -146,8 +99,8 @@ body {
 }
 
 .no-tumor {
-    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-    border-left: 6px solid #27ae60;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    border-left: 6px solid #10b981;
     color: white;
 }
 
@@ -220,9 +173,9 @@ body {
 
 /* Info Section Styles */
 .info-title {
-    color: #2c3e50;
+    color: #1e293b;
     font-size: 1.4em;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 20px;
     font-weight: 700;
     position: relative;
@@ -239,13 +192,13 @@ body {
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #dc2626, #2563eb);
     border-radius: 2px;
 }
 
 .info-list {
     list-style: none;
-    color: #5a6c7d;
+    color: #475569;
     font-size: 1.05em;
     line-height: 1.8;
 }
@@ -259,8 +212,9 @@ body {
 }
 
 .info-list li:hover {
-    background: rgba(102, 126, 234, 0.05);
+    background: rgba(220, 38, 38, 0.1);
     padding-left: 40px;
+    color: #1e293b;
 }
 
 .info-list li:before {
@@ -270,29 +224,29 @@ body {
     top: 18px;
     width: 8px;
     height: 8px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #dc2626, #2563eb);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 
 .info-list li:hover:before {
     transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
 }
 
 /* File Uploader Styles */
 [data-testid="stFileUploadDropzone"] {
-    border: 3px dashed #667eea !important;
+    border: 3px dashed #dc2626 !important;
     border-radius: 15px !important;
     padding: 30px !important;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%) !important;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%) !important;
     transition: all 0.3s ease !important;
     backdrop-filter: blur(5px);
 }
 
 [data-testid="stFileUploadDropzone"]:hover {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
-    border-color: #764ba2 !important;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%) !important;
+    border-color: #2563eb !important;
     transform: scale(1.02);
 }
 
@@ -303,7 +257,7 @@ body {
 }
 
 .stSpinner > div {
-    border-color: #667eea transparent transparent transparent !important;
+    border-color: #dc2626 transparent transparent transparent !important;
 }
 
 /* Button Styles */
@@ -317,7 +271,7 @@ button {
 
 button:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3) !important;
 }
 
 button:active {
@@ -327,13 +281,14 @@ button:active {
 /* Image Styles */
 .stImage {
     border-radius: 15px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
     transition: all 0.3s ease !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .stImage:hover {
     transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Responsive Design */
@@ -352,13 +307,7 @@ button:active {
         border-radius: 15px;
     }
 
-    .upload-section,
-    .result-section,
-    .info-section {
-        padding: 25px;
-        margin-bottom: 20px;
-        border-radius: 15px;
-    }
+    /* Container divs removed - cleaner layout */
 
     .section-title {
         font-size: 1.4em;
@@ -397,13 +346,7 @@ button:active {
         border-radius: 12px;
     }
 
-    .upload-section,
-    .result-section,
-    .info-section {
-        padding: 20px;
-        margin-bottom: 15px;
-        border-radius: 12px;
-    }
+    /* Container divs removed - cleaner layout */
 
     .section-title {
         font-size: 1.2em;
@@ -448,7 +391,7 @@ button:active {
 
 /* Streamlit specific overrides */
 .stApp {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
 }
 
 .stContainer {
@@ -462,22 +405,22 @@ button:active {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(226, 232, 240, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #dc2626, #2563eb);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    background: linear-gradient(135deg, #b91c1c, #1d4ed8);
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     body {
-        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: #e2e8f0;
     }
 
@@ -488,14 +431,11 @@ button:active {
     }
 
     .info-list {
-        color: #a0aec0;
+        color: #94a3b8;
     }
 
-    .upload-section,
-    .result-section,
-    .info-section {
-        background: rgba(45, 55, 72, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+    .stApp {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
 }
 
@@ -509,5 +449,37 @@ button:active {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200px 100%;
     animation: shimmer 1.5s infinite;
+}
+
+/* Remove empty boxes and clean up layout */
+.stVerticalBlock {
+    gap: 0 !important;
+}
+
+.stHorizontalBlock {
+    gap: 0 !important;
+}
+
+/* Hide unnecessary Streamlit elements */
+[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+[data-testid="stHeader"] {
+    display: none !important;
+}
+
+/* Clean up spacing */
+.stMarkdown {
+    margin-bottom: 0 !important;
+}
+
+.stText {
+    margin-bottom: 0 !important;
+}
+
+/* Remove default Streamlit padding */
+.stApp > .main {
+    padding: 0 !important;
 }
 
