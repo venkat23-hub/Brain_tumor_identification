@@ -46,25 +46,21 @@ def preprocess_image(image):
 
 # Main title
 st.markdown("""
-    <div class="header-container">
-        <h1 class="main-title">Brain Tumor Detection</h1>
-        <p class="subtitle">Advanced AI-powered MRI analysis for early detection</p>
-    </div>
+    <h1 class="main-title">Brain Tumor Detection</h1>
+    <p class="subtitle">Advanced AI-powered MRI analysis for early detection</p>
 """, unsafe_allow_html=True)
 
 # Create columns for responsive layout
 col1, col2 = st.columns([1, 1], gap="large")
 
 with col1:
-    st.markdown("<div class='upload-section'>", unsafe_allow_html=True)
     st.markdown("<h3 class='section-title'>Upload MRI Image</h3>", unsafe_allow_html=True)
-    
+
     uploaded_file = st.file_uploader(
         "Choose an MRI image",
         type=["jpg", "png", "jpeg"],
         label_visibility="collapsed"
     )
-    st.markdown("</div>", unsafe_allow_html=True)
 
 if uploaded_file is not None:
     with col1:
@@ -72,21 +68,20 @@ if uploaded_file is not None:
         st.markdown("<h4 class='image-title'>Uploaded Image</h4>", unsafe_allow_html=True)
         image = Image.open(uploaded_file)
         st.image(image, use_column_width=True)
-    
+
     with col2:
-        st.markdown("<div class='result-section'>", unsafe_allow_html=True)
         st.markdown("<h3 class='section-title'>Analysis Results</h3>", unsafe_allow_html=True)
-        
+
         # Preprocess image
         processed = preprocess_image(image)
-        
+
         # Make prediction
         with st.spinner("Analyzing image..."):
             prediction = model.predict(processed, verbose=0)
-        
+
         confidence = float(np.max(prediction))
         result = int(np.argmax(prediction))
-        
+
         # Display results
         if result == 1:
             st.markdown(
@@ -108,23 +103,20 @@ if uploaded_file is not None:
                 </div>""",
                 unsafe_allow_html=True
             )
-        st.markdown("</div>", unsafe_allow_html=True)
 else:
     with col2:
         st.markdown("""
-            <div class='info-section'>
-                <h3 class='info-title'>How to Use</h3>
-                <ul class='info-list'>
-                    <li>Click the upload button to select an MRI image</li>
-                    <li>Supported formats: JPG, PNG, JPEG</li>
-                    <li>The image will be processed automatically</li>
-                    <li>Results will show if a tumor is detected</li>
-                </ul>
-                <h3 class='info-title'>Important Notes</h3>
-                <ul class='info-list'>
-                    <li>This tool is for educational purposes</li>
-                    <li>Always consult a medical professional</li>
-                    <li>Do not rely solely on this AI for diagnosis</li>
-                </ul>
-            </div>
+            <h3 class='info-title'>How to Use</h3>
+            <ul class='info-list'>
+                <li>Click the upload button to select an MRI image</li>
+                <li>Supported formats: JPG, PNG, JPEG</li>
+                <li>The image will be processed automatically</li>
+                <li>Results will show if a tumor is detected</li>
+            </ul>
+            <h3 class='info-title'>Important Notes</h3>
+            <ul class='info-list'>
+                <li>This tool is for educational purposes</li>
+                <li>Always consult a medical professional</li>
+                <li>Do not rely solely on this AI for diagnosis</li>
+            </ul>
         """, unsafe_allow_html=True)
