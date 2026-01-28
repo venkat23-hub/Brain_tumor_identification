@@ -1,0 +1,343 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header-container {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+/* Section Styles */
+.upload-section,
+.result-section,
+.info-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.image-title {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Result Card Styles */
+.result-card {
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: slideIn 0.5s ease-in-out;
+    margin-top: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tumor-detected {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    border-left: 5px solid #ff5252;
+}
+
+.no-tumor {
+    background: linear-gradient(135deg, #51cf66 0%, #2f9e44 100%);
+    border-left: 5px solid #40c057;
+}
+
+.result-icon {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.result-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.result-message {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 20px;
+}
+
+.confidence-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.confidence-value {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.warning-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.success-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* Info Section Styles */
+.info-title {
+    color: #333;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.info-title:first-of-type {
+    margin-top: 0;
+}
+
+.info-list {
+    list-style: none;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.8;
+}
+
+.info-list li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+}
+
+.info-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* File Uploader Styles */
+[data-testid="stFileUploadDropzone"] {
+    border: 2px dashed #667eea !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    background: rgba(102, 126, 234, 0.05) !important;
+}
+
+[data-testid="stFileUploadDropzone"]:hover {
+    background: rgba(102, 126, 234, 0.1) !important;
+    border-color: #764ba2 !important;
+}
+
+/* Spinner Styles */
+.stSpinner {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .header-container {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+
+    .upload-section,
+    .result-section,
+    .info-section {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .result-title {
+        font-size: 1.5em;
+    }
+
+    .result-icon {
+        font-size: 2.5em;
+    }
+
+    .result-card {
+        padding: 20px;
+    }
+
+    .confidence-box {
+        font-size: 1em;
+    }
+
+    .info-list {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.6em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .header-container {
+        padding: 15px 10px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+
+    .upload-section,
+    .result-section,
+    .info-section {
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .section-title {
+        font-size: 1.1em;
+    }
+
+    .result-title {
+        font-size: 1.2em;
+    }
+
+    .result-icon {
+        font-size: 2em;
+    }
+
+    .result-message {
+        font-size: 1em;
+    }
+
+    .confidence-box {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .warning-text,
+    .success-text {
+        font-size: 0.9em;
+    }
+
+    .info-title {
+        font-size: 1.1em;
+    }
+
+    .info-list {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+
+    .info-list li {
+        padding: 6px 0 6px 25px;
+    }
+}
+
+/* Animation for buttons */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Streamlit specific overrides */
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .section-title,
+    .image-title,
+    .info-title {
+        color: #e0e0e0;
+    }
+
+    .info-list {
+        color: #b0b0b0;
+    }
+
+    .info-list li:before {
+        color: #90caf9;
+    }
+}
