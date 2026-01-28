@@ -1,9 +1,10 @@
 import streamlit as st
 import numpy as np
-import cv2
 from keras.models import load_model
 from PIL import Image
 import os
+import warnings
+warnings.filterwarnings('ignore')
 
 # Page config
 st.set_page_config(page_title="Brain Tumor Detection", layout="wide", initial_sidebar_state="collapsed")
@@ -23,12 +24,17 @@ def preprocess_image(image):
     # Convert PIL image to numpy array
     image_array = np.array(image)
     
-    # Convert to grayscale if RGB
+    # Convert to grayscale if RGB (using PIL method)
     if len(image_array.shape) == 3:
-        image_array = cv2.cvtColor(image_array, cv2.COLOR_RGB2GRAY)
+        # Convert to PIL, then to grayscale
+        image = Image.fromarray(image_array.astype('uint8'))
+        image = image.convert('L')
+        image_array = np.array(image)
     
-    # Resize to model input size
-    image_array = cv2.resize(image_array, (IMG_SIZE, IMG_SIZE))
+    # Resize to model input size using PIL
+    image = Image.fromarray(image_array.astype('uint8'))
+    image = image.resize((IMG_SIZE, IMG_SIZE), Image.Resampling.LANCZOS)
+    image_array = np.array(image)
     
     # Normalize pixel values
     image_array = image_array.astype('float32') / 255.0

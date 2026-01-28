@@ -2,7 +2,8 @@ streamlit
 tensorflow==2.20.0
 keras>=3.0.0
 numpy
-opencv-python
+opencv-python-headless
+Pillow
 matplotlib
 scikit-learn
 pandas
