@@ -13,9 +13,25 @@ st.set_page_config(page_title="Brain Tumor Detection", layout="wide", initial_si
 with open("static/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Load model
+# Load model with error handling
 model_path = os.path.join(os.path.dirname(__file__), "brain_tumor_model.h5")
-model = load_model(model_path)
+model_url = "https://drive.google.com/uc?export=download&id=YOUR_MODEL_FILE_ID"  # Replace with actual Google Drive link
+
+try:
+    if os.path.exists(model_path):
+        model = load_model(model_path)
+        st.success("✅ Model loaded successfully from local file!")
+    else:
+        st.warning("⚠️ Local model file not found. Attempting to load from cloud storage...")
+        # Uncomment and configure the line below if you want to load from a URL
+        # model = load_model(model_url)
+        st.error("❌ Model file not found locally. Please ensure 'brain_tumor_model.h5' is committed to your repository.")
+        st.info("💡 **To fix this:**\n1. Make sure the model file is committed: `git add brain_tumor_model.h5 && git commit -m 'Add model file' && git push`\n2. Or host the model on Google Drive/Dropbox and load from URL")
+        st.stop()
+except Exception as e:
+    st.error(f"❌ Error loading model: {str(e)}")
+    st.info("💡 Possible solutions:\n- Ensure the model file is in HDF5 format compatible with current Keras version\n- Check if the model was trained with a different TensorFlow version\n- Try converting the model to SavedModel format")
+    st.stop()
 
 IMG_SIZE = 128
 
